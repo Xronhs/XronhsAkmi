@@ -1,0 +1,182 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Double_X_Calculator
+{
+    public partial class Xronhs_Xrhmatopoulos_Calculator : Form
+        {
+        string input =string.Empty;
+        string operand1 = string.Empty;
+        string operand2 = string.Empty;
+        char operation;
+        double result = 0.0;
+   
+        public Xronhs_Xrhmatopoulos_Calculator()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void number1_Click(object sender, EventArgs e)
+        {
+            this.Box.Text = "";
+            input += "1";
+            this.Box.Text += input;
+        }
+
+        private void number2_Click(object sender, EventArgs e)
+        {
+            this.Box.Text = "";
+            input += "2";
+            this.Box.Text += input;
+        }
+
+        private void number3_Click(object sender, EventArgs e)
+        {
+            this.Box.Text = "";
+            input += "3";
+            this.Box.Text += input;
+        }
+
+        private void number4_Click(object sender, EventArgs e)
+        {
+            this.Box.Text = "";
+            input += "4";
+            this.Box.Text += input;
+        }
+
+        private void number5_Click(object sender, EventArgs e)
+        {
+            this.Box.Text = "";
+            input += "5";
+            this.Box.Text += input;
+        }
+
+
+        private void number6_Click(object sender, EventArgs e)
+        {
+            this.Box.Text = "";
+            input += "6";
+            this.Box.Text += input;
+        }
+
+        private void number7_Click(object sender, EventArgs e)
+        {
+            this.Box.Text = "";
+            input += "7";
+            this.Box.Text += input;
+        }
+
+        private void number8_Click(object sender, EventArgs e)
+        {
+            this.Box.Text = "";
+            input += "8";
+            this.Box.Text += input;
+        }
+
+        private void number9_Click(object sender, EventArgs e)
+        {
+            this.Box.Text = "";
+            input += "9";
+            this.Box.Text += input;
+        }
+
+        private void number0_Click(object sender, EventArgs e)
+        {
+            this.Box.Text = "";
+            input += "0";
+            this.Box.Text += input;
+        }
+
+        private void Cleaner_Click(object sender, EventArgs e)
+        {
+            this.Box.Text = "";
+            this.input = string.Empty;
+            this.operand1 = string.Empty;
+            this.operand2 = string.Empty;
+
+        }
+
+        private void Plus_Click(object sender, EventArgs e)
+        {
+            operand1 = input;
+            operation = '+';
+            input = string.Empty;
+
+
+        }
+
+        private void Minus_Click(object sender, EventArgs e)
+        {
+            operand1 = input;
+            operation = '-';
+            input = string.Empty;
+        }
+
+        private void Polaplasiasmos_Click(object sender, EventArgs e)
+        {
+            operand1 = input;
+            operation = '*';
+            input = string.Empty;
+        }
+
+        private void Dairesh_Click(object sender, EventArgs e)
+        {
+            operand1 = input;
+            operation = '/';
+            input = string.Empty;
+        }
+
+        private void Apotelesma_Click(object sender, EventArgs e)
+        {
+            operand2 = input;
+            double num1, num2;
+            double.TryParse(operand1, out num1);
+            double.TryParse(operand2, out num2);
+
+            if (operation == '+')
+            {
+                result = num1 + num2;
+                Box.Text = result.ToString();
+                input = result.ToString();
+            }
+            else if (operation == '-')
+            {
+                result = num1 - num2;
+                Box.Text = result.ToString();
+                input = result.ToString();
+            }
+            else if (operation == '*')
+            {
+                result = num1 * num2;
+                Box.Text = result.ToString();
+                input = result.ToString();
+            }
+            else if (operation == '/')
+            {
+                if (num2 != 0)
+                {
+                    result = num1 / num2;
+                    Box.Text = result.ToString();
+                    input = result.ToString();
+                }
+                else
+                {
+                    Box.Text = "DIV/Zero!";
+                }
+
+            }
+        }
+    }
+}
